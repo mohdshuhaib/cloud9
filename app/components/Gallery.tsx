@@ -15,7 +15,7 @@ export default function Gallery() {
   const images: string[] = [
     "/gallery1.png", "/gallery3.png", "/gallery4.png",
     "/gallery6.png", "/gallery2.png", "/gallery5.png",
-    "/gallery4.png",
+    "/gallery7.png",
   ];
 
   return (
