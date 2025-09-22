@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define your color palette here. This is your "color changing setup".
+  To change the theme, just update these variable values!
+*/
+:root {
+  --background-dark: #121212; /* A very deep, near-black charcoal */
+  --background-light: #1a1a1a; /* A slightly lighter charcoal for cards/sections */
+  --text-primary: #e0e0e0;     /* A soft white for main text */
+  --text-secondary: #a0a0a0;  /* A grey for less important text */
+  --accent-gold: #d4af37;      /* A rich, classic gold for accents and CTAs */
+  --accent-gold-hover: #b89b31;/* A slightly darker gold for hover effects */
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background-dark);
+}
+
+/* Custom Swiper Pagination Styles */
+.swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--text-secondary); /* Inactive dots will be grey */
+  opacity: 0.8;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-gold); /* The active dot will be our gold color */
+  transform: scale(1.2);
+}
+
+/* Custom class for a subtle text gradient on headings */
+.gold-gradient-text {
+  @apply bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent;
+}
