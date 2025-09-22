@@ -1,26 +1,29 @@
 // app/components/Navbar.tsx
-'use client'; // Required for components with user interaction like useState
+'use client';
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // For menu icons, run: npm install lucide-react
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // 1. Translate navigation links to English
   const navLinks = [
-    { name: 'الرئيسية', href: '#' },
-    { name: 'من نحن', href: '#about' },
-    { name: 'أعمالنا', href: '#gallery' },
-    { name: 'اتصل بنا', href: '#contact' },
+    { name: 'Home', href: '#' },
+    { name: 'About', href: '#about' },
+    { name: 'Gallery', href: '#gallery' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm border-b border-gray-800">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-wider text-accent-gold">
-          كلاود9
+        {/* 2. Translate brand name */}
+        <h1 className="text-2xl font-bold tracking-wider text-accent-gold font-heading">
+          Cloud9
         </h1>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - Note space-x is correct for LTR */}
         <div className="hidden md:flex space-x-8 lg:space-x-12 items-center">
           {navLinks.map((link) => (
             <a
@@ -36,7 +39,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-6 w-6 text-text-primary" /> : <Menu className="h-6 w-6 text-text-primary" />}
           </button>
         </div>
       </nav>

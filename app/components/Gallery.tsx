@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -21,8 +20,9 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-20 bg-background-dark">
       <div className="container mx-auto px-6 text-center">
-        <h3 className="text-4xl font-bold mb-12">
-          <span className="gold-gradient-text">أعمالنا</span>
+        {/* 1. Translated heading with new font class */}
+        <h3 className="text-4xl font-bold mb-12 font-heading">
+          <span className="gold-gradient-text">Our Work</span>
         </h3>
 
         <div className="relative flex flex-col items-center">
@@ -58,7 +58,8 @@ export default function Gallery() {
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
                   <Image
                     src={image}
-                    alt={`صورة من معرض أعمالنا رقم ${index + 1}`}
+                    // 2. Translated alt text
+                    alt={`A stylish haircut from the Cloud9 gallery ${index + 1}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"

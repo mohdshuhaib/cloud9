@@ -14,6 +14,10 @@
   --accent-gold-hover: #b89b31;/* A slightly darker gold for hover effects */
 }
 
+.font-heading {
+  font-family: var(--font-playfair);
+}
+
 body {
   color: var(--text-primary);
   background: var(--background-dark);

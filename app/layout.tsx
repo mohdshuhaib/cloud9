@@ -1,18 +1,27 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Tajawal } from "next/font/google"; // Using Google Fonts for a great Arabic font
+// 1. Import new fonts: Playfair Display for headings, Inter for body
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-// Configure the Tajawal font
-const tajawal = Tajawal({
-  subsets: ["arabic"],
-  weight: ["300", "400", "700", "900"],
-  variable: "--font-tajawal", // CSS variable for easy use
+// 2. Configure the Inter font for body text
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-inter", // CSS variable for easy use
 });
 
+// 3. Configure the Playfair Display font for headings
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  variable: "--font-playfair", // CSS variable for headings
+});
+
+// 4. Update metadata to English
 export const metadata: Metadata = {
-  title: "كلاود9 | صالون الحلاقة الفاخر", // Cloud9 | The Luxury Barbershop
-  description: "أفضل تجربة حلاقة في رأس الخور، دبي. حيث يلتقي الأناقة بالتميز.", // The best barbershop experience in Ras Al Khor, Dubai. Where elegance meets excellence.
+  title: "Cloud9 | The Luxury Barbershop",
+  description: "The ultimate grooming experience in Ras Al Khor, Dubai. Where style meets precision.",
 };
 
 export default function RootLayout({
@@ -21,9 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Set the language to Arabic and direction to Right-To-Left
-    <html lang="ar" dir="rtl">
-      <body className={`${tajawal.variable} font-sans antialiased`}>
+    // 5. Set language to English and remove RTL direction
+    <html lang="en">
+      {/* 6. Apply both font variables to the body */}
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
